@@ -15,6 +15,6 @@
     "GITHUB_BRANCH": "main",
     "GITHUB_REPOS": "layover-cube,layover-weave",
     "ADMIN_ENABLED": "false",
-    "ADMIN_URL": "https://layover-cube.progen-web.workers.dev/admin"
+    "ADMIN_URL": "https://layover-admin.progen-web.workers.dev/admin"
   }
 }
