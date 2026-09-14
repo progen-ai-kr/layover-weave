@@ -20,6 +20,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 초대장: 두 이미지 버튼 중 하나를 누르면 메인 화면으로 이동합니다. -->
+  <dialog class="invitation" id="invitation" aria-label="초대장" aria-describedby="invitationHint">
+    <div class="invitation-stage">
+      <img class="invitation-envelope" src="images/envelope.png" alt="분홍 봉투에 담긴 초대장" width="1376" height="768" fetchpriority="high" />
+      <button class="invitation-object invitation-key" type="button" aria-label="열쇠로 초대장 열기">
+        <img src="images/key.png" alt="" width="1376" height="768" draggable="false" />
+      </button>
+      <button class="invitation-object invitation-ribbon" type="button" aria-label="리본을 풀어 초대장 열기">
+        <img src="images/ribbon.png" alt="" width="1376" height="768" draggable="false" />
+      </button>
+    </div>
+    <p class="invitation-hint" id="invitationHint">열쇠나 리본을 눌러 초대장을 열어주세요</p>
+  </dialog>
+  <script src="invitation.js"></script>
 
   <!-- ===== 상단 메뉴 (5페이지 공통 — 수정하면 모든 페이지에 똑같이 반영하세요) ===== -->
   <header class="nav">

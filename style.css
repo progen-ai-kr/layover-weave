@@ -3,6 +3,7 @@
    (예: RE:STITCH → --bg:#F7F4EE; --ink:#111; --accent:#0E5A5A;)
    ========================================================== */
 :root {
+  --invitation-paper: #faf7ee; /* 초대장 종이 배경 */
   --bg: #faf9f6;        /* 페이지 배경 */
   --surface: #f1efe9;   /* 카드·옅은 배경 */
   --ink: #1a1a1a;       /* 기본 글자색 */
@@ -228,4 +229,93 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .product-carousel-track { transition: none; }
+}
+
+/* ===== 초대장: 원본 이미지와 버튼이 같은 좌표계를 사용합니다. ===== */
+html.invitation-open { overflow: hidden; }
+.invitation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: var(--invitation-paper);
+  color: var(--ink);
+  opacity: 1;
+  transition: opacity .7s ease;
+}
+.invitation[open] { display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; }
+.invitation::backdrop { background: transparent; }
+.invitation.is-closing { opacity: 0; }
+.invitation-stage {
+  position: relative;
+  flex: none;
+  width: min(250vw, 150vh);
+  width: min(250vw, 150svh);
+  aspect-ratio: 1376 / 768;
+  isolation: isolate;
+}
+.invitation-envelope { width: 100%; height: 100%; object-fit: contain; }
+.invitation-object {
+  position: absolute;
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .25s ease;
+}
+.invitation-object:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+.invitation-object:active { transform: scale(.97); }
+.invitation-key { left: 34%; top: 68%; width: 32%; aspect-ratio: 1376 / 768; }
+.invitation-key img { width: 100%; height: auto; }
+.invitation-ribbon { left: 54%; top: 45%; width: 14%; aspect-ratio: .9; }
+.invitation-ribbon img {
+  position: absolute;
+  width: 240%;
+  max-width: none;
+  height: auto;
+  left: -70%;
+  top: -10%;
+}
+.invitation-hint {
+  position: absolute;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: 16px;
+  right: 16px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--invitation-paper);
+  font-size: 12px;
+  text-align: center;
+  word-break: keep-all;
+}
+@media (min-width: 720px) {
+  .invitation-stage { width: min(100vw, 179.1667vh); width: min(100vw, 179.1667svh); }
+  .invitation-hint { font-size: 14px; }
+}
+@media (hover: hover) {
+  .invitation-object:hover { transform: translateY(-5px) rotate(-3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .invitation, .invitation-object { transition: none; }
 }
