@@ -4,18 +4,21 @@
    ========================================================== */
 :root {
   --invitation-paper: #faf7ee; /* 초대장 종이 배경 */
-  --bg: #faf9f6;        /* 페이지 배경 */
-  --surface: #f1efe9;   /* 카드·옅은 배경 */
-  --ink: #1a1a1a;       /* 기본 글자색 */
-  --ink-soft: #5c5c56;  /* 보조 글자색 */
-  --accent: #1a1a1a;    /* 강조색 (버튼·포인트) */
-  --line: #e4e1d8;      /* 테두리 선 */
+  --bg: #fff5f7;        /* 페이지 배경 */
+  --surface: #f9e8ed;   /* 카드·옅은 배경 */
+  --ink: #593d46;       /* 기본 글자색 */
+  --ink-soft: #82636d;  /* 보조 글자색 */
+  --accent: #994f68;    /* 강조색 (버튼·포인트) */
+  --line: #e7c8d2;      /* 테두리 선 */
 
   --font-main: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-display: var(--font-main);  /* 제목용 폰트 (다르게 쓰고 싶으면 변경) */
+  --font-display: Georgia, "Times New Roman", "Batang", serif;  /* 제목용 폰트 (다르게 쓰고 싶으면 변경) */
 
   --radius: 12px;
   --maxw: 1080px;
+  --paper: #fffdfb;       /* 빈티지 액자와 카드의 종이색 */
+  --dot: #e9cbd6;         /* 아주 작은 배경 도트 */
+  --rose-shadow: #994f6814;
 }
 
 /* ===== 기본값 (모바일 우선 — 기본이 휴대폰 화면) ===== */
@@ -283,9 +286,11 @@ html.invitation-open { overflow: hidden; }
   border-radius: var(--radius);
 }
 .invitation-object:active { transform: scale(.97); }
-.invitation-key { left: 34%; top: 68%; width: 32%; aspect-ratio: 1376 / 768; }
+/* 열쇠 머리는 왼쪽 위, 끝은 오른쪽 아래 여백에 놓고 막대가 편지지를 대각선으로 가로지릅니다. */
+.invitation-key { left: 36%; top: 35.2%; width: 27%; aspect-ratio: 1376 / 768; rotate: 60deg; }
 .invitation-key img { width: 100%; height: auto; }
-.invitation-ribbon { left: 54%; top: 45%; width: 14%; aspect-ratio: .9; }
+/* 봉투 앞면의 중앙에 리본을 맞춥니다. */
+.invitation-ribbon { left: 43%; top: 66%; width: 14%; aspect-ratio: .9; }
 .invitation-ribbon img {
   position: absolute;
   width: 240%;
@@ -318,4 +323,76 @@ html.invitation-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .invitation, .invitation-object { transition: none; }
+}
+/* ===== 홈: 초대장 다음에 보이는 빈티지 핑크 화면 ===== */
+.home-page {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) .7px, transparent .7px);
+  background-size: 18px 18px;
+}
+.nav-inner { min-height: 76px; }
+.nav-toggle { min-width: 44px; min-height: 44px; }
+.nav-menu a.active { color: var(--accent); }
+.footer { background: var(--surface); border-top: 1px solid var(--line); }
+.home-main { padding: 0 18px 48px; }
+.home-hero {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 0 36px;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  text-align: center;
+}
+.home-hero-copy { min-width: 0; }
+.home-hero .eyebrow,
+.home-note .eyebrow { color: var(--accent); font-size: 10px; letter-spacing: .2em; }
+.home-hero h1 {
+  margin: 16px 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.home-hero-copy > p:not(.eyebrow) { color: var(--ink-soft); font-size: 14px; line-height: 1.9; }
+.home-hero-copy .btn { margin-top: 24px; }
+.home-page .btn { border: 1px solid var(--accent); border-radius: 4px; box-shadow: 3px 3px 0 var(--line); }
+.home-page .btn:hover { box-shadow: 5px 5px 0 var(--line); }
+.home-page .btn:focus-visible,
+.home-note a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.home-art {
+  width: min(100%, 400px);
+  margin: 0 auto;
+  padding: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  outline: 1px solid var(--line);
+  outline-offset: 5px;
+  box-shadow: 0 18px 50px var(--rose-shadow);
+  border-radius: 160px 160px 6px 6px;
+}
+/* 이미지 전체를 보여 주어 원본 그림과 글씨가 잘리지 않게 합니다. */
+.home-art img { width: 100%; height: auto; border-radius: 150px 150px 0 0; }
+.home-note { max-width: 320px; margin: 0 auto; padding: 22px 0; border-block: 1px solid var(--line); }
+.home-note-title { margin: 12px 0 18px; font-family: var(--font-display); font-size: 25px; font-style: italic; color: var(--accent); line-height: 1.4; }
+.home-note a { display: flex; justify-content: space-between; gap: 28px; align-items: center; min-height: 48px; color: var(--ink-soft); font-size: 13px; text-decoration: none; border-bottom: 1px solid var(--line); }
+.home-note a:last-child { border-bottom: 0; }
+.home-page .section { padding: 42px 0; border-top: 1px solid var(--line); }
+.home-page .section > .eyebrow,
+.home-page .section > h2 { text-align: center; }
+.home-page .section > h2 { font-weight: 400; margin-bottom: 28px; }
+.home-page .feature { position: relative; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: 60px 60px 4px 4px; padding: 28px 18px; }
+.home-page .feature .num { color: var(--accent); font-family: var(--font-display); font-style: italic; font-size: 21px; }
+.home-page .feature h3 { font-family: var(--font-display); font-weight: 400; }
+.home-page .card-img { border: 1px solid var(--line); border-radius: 90px 90px 4px 4px; padding: 6px; background: var(--paper); }
+.home-page .card-img img { border-radius: 84px 84px 0 0; }
+.home-page .card h3 { overflow-wrap: anywhere; }
+@media (min-width: 720px) {
+  .home-main { padding-inline: 32px; }
+  .home-hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, .7fr); gap: 28px; padding-block: 64px; }
+  .home-hero-copy { text-align: left; }
+  .home-note { text-align: left; width: 100%; }
+  .home-page .section { padding-block: 64px; }
 }
