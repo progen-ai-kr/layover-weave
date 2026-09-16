@@ -19,7 +19,7 @@
   <link rel="icon" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="home-page">
   <!-- 초대장: 두 이미지 버튼 중 하나를 누르면 메인 화면으로 이동합니다. -->
   <dialog class="invitation" id="invitation" aria-label="초대장" aria-describedby="invitationHint">
     <div class="invitation-stage">
@@ -51,11 +51,25 @@
   </header>
 
   <!-- ===== 히어로 [작성서 04 홈: 메인 카피·서브 카피] ===== -->
-  <section class="hero">
-    <p class="eyebrow">BRAND KEYWORD · KEYWORD</p>
-    <h1>메인 카피 (20자 내)</h1>
-    <p>서브 카피 (40자 내) — 브랜드를 소개하는 짧은 문장을 적으세요.</p>
-    <a href="products.html" class="btn">컬렉션 보기</a>
+  <main class="home-main">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero-copy">
+      <p class="eyebrow">BRAND KEYWORD · KEYWORD</p>
+      <h1 id="home-title">메인 카피 (20자 내)</h1>
+      <p>서브 카피 (40자 내) — 브랜드를 소개하는 짧은 문장을 적으세요.</p>
+      <a href="products.html" class="btn">컬렉션 보기 <span aria-hidden="true">↗</span></a>
+    </div>
+    <!-- [작성서 04 홈: 대표 이미지] 중앙 액자, 원본 이미지 비율 유지 -->
+    <figure class="home-art">
+      <img src="images/main-bg.png" alt="파스텔 핑크 리본과 백조, 날개 달린 아기 양이 그려진 빈티지 일러스트" decoding="async" />
+    </figure>
+    <aside class="home-note" aria-label="브랜드 둘러보기">
+      <p class="eyebrow">A LITTLE WORLD OF PINK</p>
+      <p class="home-note-title">Softly, with love.</p>
+      <a href="about.html">브랜드 이야기 <span aria-hidden="true">↗</span></a>
+      <a href="portfolio.html">포트폴리오 <span aria-hidden="true">↗</span></a>
+      <a href="contact.html">문의하기 <span aria-hidden="true">↗</span></a>
+    </aside>
   </section>
 
   <!-- ===== 강점 3가지 [작성서 04 홈: 강점3가지] ===== -->
@@ -87,6 +101,8 @@
     <h2>대표 룩</h2>
     <div class="grid" id="home-looks"></div>
   </section>
+
+  </main>
 
   <!-- ===== 푸터 (5페이지 공통) [작성서 01: 푸터 표기 정보] ===== -->
   <footer class="footer">
