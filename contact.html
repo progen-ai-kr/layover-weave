@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>문의 — 브랜드 이름</title>
-  <meta name="description" content="브랜드에 문의하는 방법을 안내합니다." />
+  <title>Contact Us — 레이오버 Layover</title>
+  <meta name="description" content="레이오버의 드레스, 굿즈, 브랜드 제휴 문의" />
   <link rel="icon" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="page-special.css" />
 </head>
-<body>
+<body class="contact-page">
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">BRAND</a>
+      <a href="index.html" class="logo">LAYOVER</a>
       <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
       <nav class="nav-menu">
         <a href="index.html">홈</a>
@@ -24,42 +25,54 @@
     </div>
   </header>
 
-  <section class="page-head">
-    <h1>문의</h1>
-    <p>편한 방법으로 연락 주세요.</p>
-  </section>
+  <main class="contact-main">
+    <header class="contact-heading">
+      <p class="contact-kicker">LAYOVER / CONTACT US</p>
+      <span class="contact-sparkle" aria-hidden="true">✦</span>
+      <h1>우리의 다음 장면을<br /><em>함께</em> 만들어 볼까요?</h1>
+      <p>드레스와 굿즈, 그리고 레이오버의 세계에 대해<br class="contact-mobile-break" /> 궁금한 점을 편하게 남겨 주세요.</p>
+    </header>
 
-  <!-- [작성서 07: 연락 수단·운영 시간] 노출 원치 않는 항목은 블록째 지우세요 -->
-  <section class="section">
-    <div class="contact-list">
-      <div class="contact-item">
-        <p class="label">Instagram</p>
-        <p class="value"><a href="https://instagram.com/계정" target="_blank">@계정이름</a></p>
-      </div>
-      <div class="contact-item">
-        <p class="label">Email</p>
-        <p class="value"><a href="mailto:hello@brand.com">hello@brand.com</a></p>
-      </div>
-      <div class="contact-item">
-        <p class="label">KakaoTalk</p>
-        <p class="value"><a href="#" target="_blank">카카오채널 바로가기</a></p>
-      </div>
-      <div class="contact-item">
-        <p class="label">Hours</p>
-        <p class="value">평일 10:00 – 18:00</p>
-      </div>
+    <div class="contact-layout">
+      <!-- [작성서 07: 연락 수단·운영 시간] 운영 정보 카드 -->
+      <aside class="contact-info-card" aria-labelledby="contact-info-title">
+        <div class="contact-info-top"><span class="contact-badge">OFFICIAL NOTE</span><span aria-hidden="true">♡</span></div>
+        <h2 id="contact-info-title">Layover<br /><span>레이오버</span></h2>
+        <p class="contact-info-intro">일상과 로맨스 판타지 사이,<br />당신의 취향을 기다리고 있어요.</p>
+        <dl class="contact-details">
+          <div><dt>운영시간</dt><dd>평일 10:00 - 18:00</dd></div>
+          <div><dt>대표 이메일</dt><dd><a href="mailto:eugenekseoul@gmail.com">eugenekseoul@gmail.com</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/eugene_k_seoul/" target="_blank" rel="noopener noreferrer">@eugene_k_seoul ↗</a></dd></div>
+        </dl>
+        <div class="contact-business">
+          <p>오늘바른 · 대표 이유현</p>
+          <p>사업자등록번호 365-70-00574</p>
+          <p>충남 금산군 추부면 태봉길 30</p>
+          <p>전화 070-8984-2192</p>
+          <p>개인정보담당자 이유현</p>
+        </div>
+      </aside>
+
+      <section class="contact-chat-card" aria-labelledby="contact-form-title">
+        <div class="contact-chat-header"><div><p class="contact-kicker">MESSAGE ROOM</p><h2 id="contact-form-title">레이오버에게 보내는 편지</h2></div><span class="contact-online"><i></i> 답장 가능 시간</span></div>
+        <div id="contactFormRoot"><p class="contact-form-loading">문의 폼을 준비하고 있어요.</p></div>
+      </section>
     </div>
-  </section>
+  </main>
 
   <footer class="footer">
-    <p class="logo">BRAND</p>
+    <p class="logo">LAYOVER</p>
     <p class="biz">
-      상호: ○○○ · 대표자: ○○○<br />
-      사업자등록번호: 000-00-00000 · 주소: ○○○
+      오늘바른 · 대표 이유현<br />
+      사업자등록번호: 365-70-00574 · 충남 금산군 추부면 태봉길 30<br />
+      전화: 070-8984-2192 · 개인정보담당자: 이유현
     </p>
-    <p>© 브랜드 이름. All rights reserved.</p>
+    <p>© 레이오버. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="vendor/react/react.production.min.js" defer></script>
+  <script src="vendor/react/react-dom.production.min.js" defer></script>
+  <script src="contact-form.js" defer></script>
 </body>
 </html>

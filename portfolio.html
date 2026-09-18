@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>포트폴리오 — 브랜드 이름</title>
-  <meta name="description" content="브랜드의 작업 사례를 소개합니다." />
+  <title>PORTFOLIO / LOOKBOOK — 레이오버 Layover</title>
+  <meta name="description" content="일상과 로맨스 판타지 사이, 레이오버의 드레스 및 굿즈 컬렉션" />
   <link rel="icon" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="page-special.css" />
   <link rel="stylesheet" href="rich-content.css?v=20260826-rich-editor-1" />
 </head>
-<body>
+<body class="lookbook-page">
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">BRAND</a>
+      <a href="index.html" class="logo">LAYOVER</a>
       <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
       <nav class="nav-menu">
         <a href="index.html">홈</a>
@@ -25,30 +26,58 @@
     </div>
   </header>
 
-  <section class="page-head">
-    <h1>포트폴리오</h1>
-    <p>브랜드의 작업·프로젝트 사례를 소개합니다.</p>
-  </section>
+  <main class="lookbook-main">
+    <header class="lookbook-heading">
+      <p class="lookbook-kicker">LAYOVER — A ROMANTIC ARCHIVE</p>
+      <span class="lookbook-ornament" aria-hidden="true">♡</span>
+      <h1>PORTFOLIO <span>/</span> LOOKBOOK</h1>
+      <p class="lookbook-intro">일상과 로맨스 판타지 사이,<br class="lookbook-mobile-break" /> 레이오버의 드레스 및 굿즈 컬렉션</p>
+      <p class="lookbook-caption">사랑스러운 순간을 모아, 나만의 작은 판타지로.</p>
+    </header>
 
-  <section class="section">
+    <section class="lookbook-gallery" aria-labelledby="lookbook-gallery-title">
+      <div class="lookbook-section-heading">
+        <h2 id="lookbook-gallery-title">Collection stories <span>컬렉션 이야기</span></h2>
+        <span class="lookbook-count">01 — 03</span>
+      </div>
+      <!-- 요청받은 예시 카드입니다. 운영 포트폴리오와 분리하여 관리자 저장 내용을 보존합니다. -->
+      <p class="lookbook-preview-note">콘셉트 미리보기 · 기존 일러스트로 구성한 예시 컬렉션입니다.</p>
+      <div id="lookbookGallery"><p class="portfolio-status">컬렉션을 준비하고 있어요.</p></div>
+      <noscript><p>컬렉션 상세 보기를 사용하려면 브라우저의 JavaScript를 켜주세요.</p></noscript>
+    </section>
+
+  <section class="lookbook-published" aria-labelledby="published-title">
+    <div class="lookbook-section-heading">
+      <h2 id="published-title">From Layover <span>브랜드 포트폴리오</span></h2>
+      <span class="lookbook-count">OUR ARCHIVE</span>
+    </div>
     <!-- 브랜드 담당자가 관리자에서 작성한 한 개의 포트폴리오 문서가 여기에 표시됩니다.
          학생은 이 컨테이너와 portfolio.js를 유지하고 CSS로 UI만 디자인하세요. -->
     <article id="portfolioContent" class="portfolio-content" aria-live="polite">
       <p class="portfolio-status">포트폴리오를 불러오는 중입니다.</p>
     </article>
   </section>
+  <section class="lookbook-contact" aria-label="컬렉션 문의">
+    <div><p class="lookbook-kicker">YOUR NEXT ROMANTIC CHAPTER</p><h2>당신의 이야기도 함께 만들어요.</h2></div>
+    <a href="contact.html">레이오버에 문의하기 <span aria-hidden="true">↗</span></a>
+  </section>
+  </main>
 
   <footer class="footer">
-    <p class="logo">BRAND</p>
+    <p class="logo">LAYOVER</p>
     <p class="biz">
       상호: ○○○ · 대표자: ○○○<br />
       사업자등록번호: 000-00-00000 · 주소: ○○○
     </p>
-    <p>© 브랜드 이름. All rights reserved.</p>
+    <p>© 레이오버. All rights reserved.</p>
   </footer>
 
   <script src="catalog.js?v=20260826-rich-editor-1"></script>
   <script src="portfolio.js"></script>
   <script src="script.js"></script>
+  <!-- 빌드 도구 없이 사용하는 로컬 React 18.3.1. 관리자 편집기와는 독립된 UI입니다. -->
+  <script src="vendor/react/react.production.min.js" defer></script>
+  <script src="vendor/react/react-dom.production.min.js" defer></script>
+  <script src="lookbook-gallery.js" defer></script>
 </body>
 </html>
