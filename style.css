@@ -293,6 +293,170 @@ a { color: inherit; }
 .product-highlight > :last-child { margin-bottom: 0; }
 .product-back { text-align: center; padding-top: 0; }
 
+/* ===== 제품 목록·상세 — 파스텔 공주 테마 ===== */
+.shop-page { color: var(--princess-plum); background-color: var(--princess-bg); }
+.shop-page .nav { background: color-mix(in srgb, var(--princess-bg) 92%, white); border-color: var(--princess-line); }
+.shop-page .nav-menu { background: var(--princess-bg); border-color: var(--princess-line); }
+.shop-page .nav-menu a { border-color: var(--princess-line); }
+.shop-page .nav-menu a.active { color: var(--princess-pink-deep); }
+.shop-page .nav-toggle { color: var(--princess-plum); }
+.shop-page .footer { border-color: var(--princess-line); background: var(--princess-pink); color: var(--princess-plum); }
+.shop-page .btn {
+  border: 1px solid var(--princess-pink-deep);
+  background: var(--princess-pink-deep);
+  color: var(--princess-cream);
+  box-shadow: 0 8px 20px var(--princess-shadow);
+}
+.shop-page .btn.ghost { background: var(--princess-cream); color: var(--princess-plum); }
+
+.shop-hero {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  padding: 68px 22px 72px;
+  background-color: var(--princess-pink);
+  background-image:
+    linear-gradient(90deg, transparent 75%, color-mix(in srgb, var(--princess-cream) 72%, transparent) 75%),
+    linear-gradient(0deg, transparent 75%, color-mix(in srgb, var(--princess-cream) 72%, transparent) 75%);
+  background-size: 30px 30px;
+}
+.shop-hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -36px;
+  left: 0;
+  z-index: 2;
+  height: 36px;
+  background: url("images/Brand_Laceline.png") left top / auto 36px repeat-x;
+  filter: drop-shadow(0 3px 2px var(--princess-shadow));
+  pointer-events: none;
+}
+.shop-hero > * { position: relative; z-index: 1; }
+.shop-crown { margin: 0 0 2px; color: var(--princess-pink-deep) !important; font-size: 38px; line-height: 1; }
+.shop-kicker { color: var(--princess-pink-deep) !important; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; }
+.shop-hero h1 {
+  margin-top: 8px;
+  color: var(--princess-plum);
+  font-family: var(--font-princess-script);
+  font-size: clamp(38px, 9vw, 62px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.05;
+}
+.shop-hero > p:not(.shop-crown):not(.shop-kicker) { width: min(100%, 600px); margin: 14px auto 0; color: var(--princess-plum); }
+.shop-ribbon {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 7px 22px;
+  border: 1px solid var(--princess-pink-deep);
+  border-radius: 999px;
+  background: var(--princess-cream);
+  color: var(--princess-plum);
+  font-family: var(--font-princess);
+  font-size: 13px;
+  font-style: italic;
+}
+.product-catalog { padding-top: 72px; }
+.product-list-page #product-list { grid-template-columns: 1fr; gap: 26px; }
+.product-list-page #product-list .card {
+  position: relative;
+  min-width: 0;
+  padding: 10px 10px 22px;
+  overflow: hidden;
+  border: 1px solid var(--princess-line);
+  border-radius: 24px;
+  background: var(--princess-cream);
+  box-shadow: 0 12px 30px var(--princess-shadow);
+}
+.product-list-page #product-list .card::after {
+  content: "♡";
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  color: var(--princess-pink-deep);
+  font-size: 15px;
+}
+.product-list-page #product-list .card-img {
+  position: relative;
+  border: 1px solid var(--princess-line);
+  border-radius: 17px 17px 10px 10px;
+  background-color: var(--princess-pink);
+  background-image:
+    linear-gradient(45deg, var(--princess-cream) 25%, transparent 25%, transparent 75%, var(--princess-cream) 75%),
+    linear-gradient(45deg, var(--princess-cream) 25%, transparent 25%, transparent 75%, var(--princess-cream) 75%);
+  background-position: 0 0, 14px 14px;
+  background-size: 28px 28px;
+}
+.product-list-page #product-list .card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.product-list-page #product-list .card .k,
+.product-list-page #product-list .card h3,
+.product-list-page #product-list .card p { margin-right: 34px; margin-left: 8px; }
+.product-list-page #product-list .card .k { color: var(--princess-pink-deep); font-weight: 700; }
+.product-list-page #product-list .card h3 { margin-top: 6px; color: var(--princess-plum); font-family: var(--font-princess); font-size: 18px; }
+.product-list-page #product-list .card p { color: var(--princess-plum); }
+.product-list-page #product-list .card .price { color: var(--princess-pink-deep); }
+
+.product-detail-page #product-detail { padding-top: 26px; }
+.product-detail-page .product-hero {
+  width: min(calc(100% - 32px), var(--maxw));
+  padding: 10px;
+  border: 1px solid var(--princess-line);
+  border-radius: 28px;
+  background: var(--princess-cream);
+  box-shadow: 0 16px 38px var(--princess-shadow);
+}
+.product-detail-page .product-carousel-viewport { border: 1px solid var(--princess-line); border-radius: 20px; }
+.product-detail-page .product-hero-image { background-color: var(--princess-pink); }
+.product-detail-page .product-image-placeholder {
+  background-image:
+    linear-gradient(45deg, var(--princess-cream) 25%, transparent 25%, transparent 75%, var(--princess-cream) 75%),
+    linear-gradient(45deg, var(--princess-cream) 25%, transparent 25%, transparent 75%, var(--princess-cream) 75%);
+  background-position: 0 0, 16px 16px;
+  background-size: 32px 32px;
+}
+.product-detail-page .product-info { padding: 10px 10px 24px; }
+.product-detail-page .product-info .k { color: var(--princess-pink-deep); font-weight: 700; }
+.product-detail-page .product-info h1 { color: var(--princess-plum); font-family: var(--font-princess); font-style: italic; }
+.product-detail-page .product-summary,
+.product-detail-page .product-block-copy p,
+.product-detail-page .product-highlight p { color: var(--princess-plum); }
+.product-detail-page .product-price { color: var(--princess-pink-deep); }
+.product-detail-page .tags span { border-color: var(--princess-line); background: var(--princess-bg); color: var(--princess-plum); }
+.product-detail-page .product-carousel-dot { background: var(--princess-line); }
+.product-detail-page .product-carousel-dot[aria-current="true"] { background: var(--princess-pink-deep); }
+.product-detail-page .product-carousel-button { border-color: var(--princess-cream); background: color-mix(in srgb, var(--princess-plum) 78%, transparent); color: var(--princess-cream); }
+.product-detail-page .product-story { margin-top: 40px; }
+.product-detail-page .product-rich-text,
+.product-detail-page .product-image-text,
+.product-detail-page .product-gallery,
+.product-detail-page .product-highlight,
+.product-detail-page .product-full-image {
+  padding: 12px;
+  border: 1px solid var(--princess-line);
+  border-radius: 26px;
+  background: var(--princess-cream);
+  box-shadow: 0 12px 30px var(--princess-shadow);
+}
+.product-detail-page .product-rich-text h2,
+.product-detail-page .product-block-copy h2,
+.product-detail-page .product-highlight h2 { color: var(--princess-plum); font-family: var(--font-princess); font-style: italic; }
+.product-detail-page .product-rich-text img,
+.product-detail-page .product-full-image img,
+.product-detail-page .product-gallery figure,
+.product-detail-page .product-block-image { border-radius: 18px; }
+.product-detail-page .product-highlight {
+  background-color: var(--princess-pink);
+  background-image:
+    linear-gradient(90deg, transparent 75%, color-mix(in srgb, var(--princess-cream) 70%, transparent) 75%),
+    linear-gradient(0deg, transparent 75%, color-mix(in srgb, var(--princess-cream) 70%, transparent) 75%);
+  background-size: 28px 28px;
+}
+.product-detail-page .purchase-dialog { border: 1px solid var(--princess-line); background: var(--princess-cream); color: var(--princess-plum); }
+.product-detail-page .purchase-dialog-eyebrow { color: var(--princess-pink-deep); }
+.product-detail-page .purchase-dialog-content { background: var(--princess-bg); color: var(--princess-plum); }
+.product-detail-page .purchase-dialog-close { border-color: var(--princess-line); color: var(--princess-plum); }
+
 /* ===== 포트폴리오 =====
    관리자 편집기에서 만든 한 페이지가 이 영역에 표시됩니다.
    학생은 아래 스타일을 브랜드 디자인에 맞게 자유롭게 바꿀 수 있습니다. */
@@ -364,6 +528,19 @@ a { color: inherit; }
   .about-story { display: grid; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: 56px; }
   .about-emblem { width: 200px; margin: 0; }
   .about-people { padding-right: 24px; padding-left: 24px; }
+  .shop-hero { padding: 88px 24px 94px; }
+  .product-catalog { padding-top: 92px; }
+  .product-list-page #product-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .product-list-page #product-list .card { transition: transform .22s ease, box-shadow .22s ease; }
+  .product-list-page #product-list .card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px var(--princess-shadow); }
+  .product-detail-page #product-detail { padding-top: 48px; }
+  .product-detail-page .product-hero { padding: 20px; gap: 40px; }
+  .product-detail-page .product-info { padding: 34px 28px; }
+  .product-detail-page .product-rich-text,
+  .product-detail-page .product-image-text,
+  .product-detail-page .product-gallery,
+  .product-detail-page .product-highlight,
+  .product-detail-page .product-full-image { padding: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
