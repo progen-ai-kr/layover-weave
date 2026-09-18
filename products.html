@@ -8,7 +8,7 @@
   <link rel="icon" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="shop-page product-list-page">
 
   <header class="nav">
     <div class="nav-inner">
@@ -25,15 +25,18 @@
   </header>
 
   <!-- [작성서 05: 취급 품목] -->
-  <section class="page-head">
-    <h1>제품</h1>
+  <section class="page-head shop-hero">
+    <p class="shop-crown" aria-hidden="true">♔</p>
+    <p class="shop-kicker">ROYAL BOUTIQUE</p>
+    <h1>Our Collection</h1>
     <p>취급 품목을 여기에 적으세요. (예: Dress / Jacket / Shirt / Skirt)</p>
+    <span class="shop-ribbon" aria-hidden="true">Chosen with love</span>
   </section>
 
   <!-- ===== 제품 목록 =====
        ★ 제품은 여기 HTML이 아니라 products.json 파일에서 관리합니다.
        products.json에 제품을 추가하면 이 목록과 상세 페이지에 자동으로 나타납니다. -->
-  <section class="section">
+  <section class="section product-catalog">
     <div class="grid" id="product-list">
       <!-- products.json 내용이 자동으로 채워집니다 -->
     </div>
