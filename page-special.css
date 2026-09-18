@@ -1,0 +1,110 @@
+/* 레이오버 포트폴리오·문의 전용 스타일입니다. 다른 페이지의 공통 스타일은 수정하지 않습니다. */
+:root {
+  --special-bg: #fff3f6;
+  --special-panel: #fff;
+  --special-line: #f2e4e8;
+  --special-shadow: #ffeaf2;
+  --special-ink: #282226;
+  --special-muted: #8e8e93;
+  --special-pink: #ffc6d4;
+  --special-hover: #ff9bb3;
+}
+@font-face { font-family: "Pretendard Variable"; src: url("fonts/PretendardVariable.woff2") format("woff2"); font-weight: 45 920; font-style: normal; font-display: swap; }
+.lookbook-page, .contact-page { background: var(--special-bg); color: var(--special-ink); font-family: "Pretendard Variable", Pretendard, sans-serif; }
+.lookbook-page .nav, .contact-page .nav { background: #fde3eeeb; border-color: var(--special-line); }
+.lookbook-main, .contact-main { max-width: 1180px; margin: 0 auto; padding: 0 20px 64px; }
+.lookbook-heading, .contact-heading { padding: 56px 0 40px; text-align: center; }
+.lookbook-kicker, .contact-kicker { color: #8d4d62; font-size: 10px; font-weight: 650; letter-spacing: .18em; }
+.lookbook-ornament, .contact-sparkle { display: block; margin: 16px auto 12px; color: var(--special-pink); font-size: 30px; }
+.lookbook-heading h1 { font-size: clamp(25px, 6vw, 50px); letter-spacing: -.04em; font-weight: 650; }
+.lookbook-heading h1 span { color: var(--special-pink); font-weight: 400; }
+.lookbook-heading h1::after, .contact-heading h1::after { content: ""; display: block; width: 52px; height: 3px; margin: 22px auto; background: var(--special-pink); }
+.lookbook-intro, .contact-heading > p:last-child { font-size: 14px; line-height: 1.9; color: var(--special-ink); }
+.lookbook-caption, .lookbook-preview-note { color: var(--special-muted); font-size: 12px; }
+.lookbook-section-heading { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid var(--special-line); }
+.lookbook-section-heading h2 { font-size: 17px; font-weight: 550; }
+.lookbook-section-heading h2 span { display: block; color: var(--special-muted); font-size: 11px; }
+.lookbook-count { color: var(--special-muted); font-size: 10px; letter-spacing: .1em; }
+.lookbook-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.lookbook-card { background: var(--special-panel); border: 1px solid var(--special-line); border-radius: 12px; box-shadow: 3px 3px 0 var(--special-shadow); transition: transform .25s ease, box-shadow .25s ease; }
+.lookbook-card-button { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0; border: 0; border-radius: inherit; background: transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; }
+.lookbook-card-button:focus-visible, .lookbook-close:focus-visible { outline: 3px solid #8d4d62; outline-offset: 4px; }
+.lookbook-image { position: relative; aspect-ratio: 4 / 4.3; overflow: hidden; border-radius: 11px 11px 0 0; background: var(--special-bg); }
+.lookbook-image img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.lookbook-image--morning img { object-fit: cover; object-position: center 26%; }
+.lookbook-image--special img { transform: scale(1.32); }
+.lookbook-image--goods img { transform: rotate(-30deg) scale(.93); }
+.lookbook-image-number { position: absolute; top: 16px; left: 16px; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--special-line); border-radius: 50%; background: #fff; color: #8d4d62; font-size: 11px; }
+.lookbook-image-caption { position: absolute; bottom: 14px; left: 16px; padding: 5px 10px; border: 1px solid var(--special-line); background: #fff; color: #8d4d62; font-size: 11px; }
+.lookbook-card-copy { display: flex; flex-direction: column; flex: 1; padding: 22px; }
+.lookbook-category { color: #8d4d62; font-size: 11px; letter-spacing: .04em; font-weight: 600; }
+.lookbook-card h3 { margin: 10px 0 22px; font-size: 18px; font-weight: 550; line-height: 1.65; word-break: keep-all; }
+.lookbook-card-bottom { display: flex; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--special-line); font-size: 12px; }
+.lookbook-arrow { color: #8d4d62; font-size: 18px; }
+.lookbook-published { margin-top: 64px; }
+.lookbook-published .portfolio-content { margin-top: 24px; padding: 20px; background: #fff; border: 1px solid var(--special-line); border-radius: 12px; box-shadow: 3px 3px 0 var(--special-shadow); }
+.lookbook-contact { display: flex; flex-direction: column; gap: 24px; margin-top: 48px; padding: 28px 24px; border: 1px solid var(--special-line); border-radius: 12px; background: var(--special-bg); }
+.lookbook-contact h2 { margin-top: 8px; font-size: 20px; }
+.lookbook-contact a, .lookbook-detail-link { display: inline-flex; justify-content: center; gap: 20px; min-height: 48px; padding: 12px 20px; border-radius: 999px; background: var(--special-pink); color: var(--special-ink); font-size: 13px; font-weight: 600; text-decoration: none; }
+.lookbook-contact a:hover, .lookbook-detail-link:hover { background: var(--special-hover); }
+.lookbook-dialog { width: min(920px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 1px solid var(--special-line); border-radius: 16px; background: #fff; color: var(--special-ink); font-family: inherit; }
+.lookbook-dialog::backdrop { background: #28222666; backdrop-filter: blur(5px); }
+.lookbook-close { float: right; position: sticky; z-index: 2; top: 12px; width: 44px; height: 44px; margin: 12px 12px -56px 0; border: 1px solid var(--special-line); border-radius: 50%; background: #fff; font-size: 26px; cursor: pointer; }
+.lookbook-detail-layout { display: grid; grid-template-columns: 1fr; }
+.lookbook-detail-copy { padding: 28px 24px; }
+.lookbook-detail-copy h2 { margin: 12px 0 22px; font-size: 25px; line-height: 1.5; }
+.lookbook-detail-copy > p:not([class]) { font-size: 14px; line-height: 1.9; }
+.lookbook-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 24px 0; padding: 0; list-style: none; }
+.lookbook-tags li { padding: 5px 9px; border: 1px solid var(--special-line); border-radius: 4px; color: #8d4d62; font-size: 10px; }
+html.lookbook-modal-open { overflow: hidden; }
+.contact-heading h1 { font-size: clamp(27px, 7vw, 54px); font-weight: 600; line-height: 1.35; }
+.contact-heading h1 em { color: var(--special-hover); font-style: normal; }
+.contact-layout { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.contact-info-card, .contact-chat-card { border: 1px solid var(--special-line); border-radius: 18px; background: #fff; box-shadow: 3px 3px 0 var(--special-shadow); }
+.contact-info-card { padding: 25px 22px; background: #fde3ee; }
+.contact-info-top, .contact-chat-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.contact-badge { color: #8d4d62; font-size: 9px; letter-spacing: .16em; font-weight: 700; }
+.contact-info-card h2 { margin-top: 38px; font-size: 32px; line-height: 1.05; }
+.contact-info-card h2 span { color: #8d4d62; font-size: 16px; }
+.contact-info-intro { margin: 18px 0 28px; color: #765b66; font-size: 13px; line-height: 1.9; }
+.contact-details { display: grid; gap: 15px; margin: 0; padding-top: 20px; border-top: 1px solid #efcbd7; }
+.contact-details div { display: grid; grid-template-columns: 88px 1fr; gap: 8px; }
+.contact-details dt, .contact-business { color: var(--special-muted); font-size: 11px; }
+.contact-details dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
+.contact-details a { color: var(--special-ink); }
+.contact-business { margin-top: 28px; padding-top: 18px; border-top: 1px dashed #efcbd7; line-height: 1.8; }
+.contact-chat-card { padding: 22px 18px 18px; }
+.contact-chat-header { align-items: flex-end; padding: 4px 4px 20px; border-bottom: 1px solid var(--special-line); }
+.contact-chat-header h2 { margin-top: 7px; font-size: 20px; }
+.contact-online { color: var(--special-muted); font-size: 10px; }
+.contact-online i { display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 50%; background: #8bcab3; }
+.contact-bubble { position: relative; display: flex; gap: 10px; width: fit-content; max-width: 92%; margin: 20px 0 22px; padding: 13px 15px; border: 1px solid var(--special-line); border-radius: 18px 18px 18px 6px; background: var(--special-bg); }
+.contact-avatar { display: grid; flex: 0 0 27px; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--special-pink); color: #8d4d62; }
+.contact-bubble p { margin: 0; white-space: pre-line; font-size: 12px; line-height: 1.65; }
+.contact-bubble time { align-self: flex-end; color: var(--special-muted); font-size: 9px; }
+.contact-form { display: grid; gap: 14px; }
+.contact-form-row { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.contact-field { display: grid; gap: 7px; font-size: 12px; font-weight: 600; }
+.contact-field > input, .contact-field > select, .contact-field > textarea { width: 100%; min-height: 47px; padding: 12px 14px; border: 1px solid var(--special-line); border-radius: 18px 18px 18px 6px; outline: 0; background: #fff; color: var(--special-ink); font: inherit; font-size: 13px; font-weight: 400; }
+.contact-field > textarea { min-height: 126px; resize: vertical; }
+.contact-field > input:focus, .contact-field > select:focus, .contact-field > textarea:focus { border-color: var(--special-hover); box-shadow: 0 0 0 3px #ffc6d455; }
+.contact-error { color: #bb536c; font-size: 11px; font-weight: 400; }
+.contact-form-bottom { display: flex; flex-direction: column; gap: 15px; padding-top: 17px; border-top: 1px solid var(--special-line); }
+.contact-form-bottom p { color: var(--special-muted); font-size: 10px; }
+.contact-submit { display: inline-flex; justify-content: center; gap: 18px; min-height: 48px; padding: 12px 21px; border: 0; border-radius: 999px; background: var(--special-pink); color: var(--special-ink); cursor: pointer; font: inherit; font-weight: 650; }
+.contact-submit:hover { background: var(--special-hover); }
+.contact-toast { position: fixed; z-index: 50; right: 18px; bottom: 18px; left: 18px; max-width: 620px; margin: auto; padding: 14px 17px; border: 1px solid #efc5d1; border-radius: 14px; background: #fff; box-shadow: 3px 3px 0 var(--special-shadow); font-size: 12px; }
+@media (min-width: 720px) {
+  .lookbook-main, .contact-main { padding-inline: 32px; }
+  .lookbook-heading, .contact-heading { padding: 72px 0 56px; }
+  .lookbook-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  .lookbook-contact { flex-direction: row; align-items: center; justify-content: space-between; }
+  .lookbook-detail-layout { grid-template-columns: 1fr 1fr; align-items: center; }
+  .contact-layout { grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr); gap: 28px; }
+  .contact-info-card { position: sticky; top: 100px; }
+  .contact-chat-card { padding: 26px 28px 24px; }
+  .contact-form-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-form-bottom { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+@media (hover: hover) { .lookbook-card:hover { transform: translateY(-6px); box-shadow: 6px 9px 0 var(--special-shadow); } }
+@media (prefers-reduced-motion: reduce) { .lookbook-card { transition: none; } }
